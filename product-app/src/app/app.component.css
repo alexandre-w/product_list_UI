@@ -1,0 +1,17 @@
+#app-container {
+    display: grid;
+    grid-template-areas: "t t" 
+                         "f l";
+    grid-template-columns: 700px 1fr;
+    grid-template-rows: max-content;
+}
+.title {
+    grid-area: t;
+}
+.product-form {
+    grid-area: f;
+}
+
+.list-product {
+    grid-area: l;
+}
