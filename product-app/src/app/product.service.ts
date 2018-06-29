@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-import { ProductItem } from './productItem';
+import { ProductItem } from './model/productItem';
 
 
 @Injectable({
