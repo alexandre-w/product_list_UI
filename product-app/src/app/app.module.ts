@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ProductService } from './product.service';
+import { HttpModule } from '@angular/http';
 
 import { MyOwnCustomMaterialModuleModule } from './my-own-custom-material-module/my-own-custom-material-module.module' ;
 
@@ -15,9 +17,10 @@ import { MyOwnCustomMaterialModuleModule } from './my-own-custom-material-module
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     MyOwnCustomMaterialModuleModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
