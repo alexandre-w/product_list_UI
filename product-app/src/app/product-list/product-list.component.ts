@@ -11,6 +11,7 @@ import { ProductItem } from '../model/productItem' ;
 export class ProductListComponent implements OnInit {
 
   products: ProductItem[];
+  selectedProduct: ProductItem;
 
   constructor(private productService: ProductService ) { }
 
@@ -20,7 +21,13 @@ export class ProductListComponent implements OnInit {
 
   getProducts() {
     this.productService.getProducts()
-    .then(items => this.products = items);
+    .then(items => {
+      this.products = items;
+    });
+  }
+
+  displayDetails(product: ProductItem) {
+    this.selectedProduct = product ;
   }
 
 }

@@ -1,17 +1,20 @@
 <form class="product-form">
   <mat-form-field class="full-width">
-    <input matInput placeholder="Name" value="Bread">
+    <input matInput placeholder="Name" value={{product.name}}>
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <textarea matInput placeholder="Description"></textarea>
+    <textarea matInput placeholder="Description" value={{product.description}}></textarea>
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <input matInput type="number" placeholder="Price (USD)" value="20">
+    <input matInput type="number" placeholder="Price (USD)" value={{product.price}}>
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <input matInput placeholder="Type" value="food">
+    <input matInput placeholder="Type" value={{product.type}}>
   </mat-form-field>
 </form>
+
+<button mat-stroked-button color="primary">Save</button>
+<button mat-stroked-button (click)="resetProduct()" color="accent">New Product</button>
