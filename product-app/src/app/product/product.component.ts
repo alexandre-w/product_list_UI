@@ -13,11 +13,10 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.product = new ProductItem();
   }
 
   resetProduct() {
-    this.product = new ProductItem();
+    this.product = null;
   }
 
 }
