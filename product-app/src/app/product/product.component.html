@@ -2,19 +2,19 @@
 
   <form class="product-form">
     <mat-form-field class="full-width">
-      <input matInput placeholder="Name" value={{product.name}}>
+      <input matInput name="name" placeholder="Name" [(ngModel)]="product.name">
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <textarea matInput placeholder="Description" value={{product.description}}></textarea>
+      <textarea matInput name="description" placeholder="Description" [(ngModel)]=product.description></textarea>
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <input matInput type="number" placeholder="Price (USD)" value={{product.price}}>
+      <input matInput name="price" type="number" placeholder="Price (USD)" [(ngModel)]=product.price>
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <input matInput placeholder="Type" value={{product.type}}>
+      <input matInput name="type" placeholder="Type" [(ngModel)]=product.type>
     </mat-form-field>
   </form>
 
@@ -24,25 +24,25 @@
 
   <form class="product-form">
     <mat-form-field class="full-width">
-      <input matInput placeholder="Name" >
+      <input matInput name="name" placeholder="Name" >
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <textarea matInput placeholder="Description" ></textarea>
+      <textarea matInput name="description" placeholder="Description" ></textarea>
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <input matInput type="number" placeholder="Price (USD)" >
+      <input matInput name="price" type="number" placeholder="Price (USD)" >
     </mat-form-field>
 
     <mat-form-field class="full-width">
-      <input matInput placeholder="Type" >
+      <input matInput name="type" placeholder="Type" >
     </mat-form-field>
   </form>
 
 </div>
 
-<button mat-stroked-button color="primary">{{product ? 'Update' : 'Save'}}</button>
+<button mat-stroked-button (click)="saveProduct(product)" color="primary">{{product ? 'Update' : 'Save'}}</button>
 <button mat-stroked-button (click)="resetProduct()" color="accent">New Product</button>
 
 
