@@ -36,9 +36,16 @@ export class ProductService {
     const url = `${this.productUrl}/${product._id}`;
     return this.http.put(url, product)
     .toPromise()
-    .then()
-    .catch();
+    .then(response => response.json() as ProductItem)
+    .catch(this.handleError);
 
+  }
+
+  addProduct(product: ProductItem): Promise<any> {
+    return this.http.post(this.productUrl, product)
+            .toPromise()
+            .then(response => response.json() as ProductItem)
+            .catch(this.handleError);
   }
 
 }
