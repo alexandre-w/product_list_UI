@@ -1,19 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-import { HttpHeaders } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { ProductItem } from './model/productItem';
 import { keys } from './keys';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-  private headers = new Headers({'Content-Type': 'application/json'});
 
   private productUrl = keys.serviceUrl;
 

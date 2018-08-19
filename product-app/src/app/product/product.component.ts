@@ -11,16 +11,24 @@ export class ProductComponent implements OnInit {
 
   @Input() product: ProductItem;
 
+  newProduct: ProductItem;
+
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.newProduct = new ProductItem();
   }
 
   resetProduct() {
     this.product = null;
+    this.newProduct = new ProductItem();
   }
 
-  saveProduct(updateProduct: ProductItem) {
+  saveProduct(newProduct: ProductItem) {
+    this.productService.addProduct(newProduct);
+  }
+
+  updateProduct(updateProduct: ProductItem) {
     this.productService.updateProduct(updateProduct);
   }
 
