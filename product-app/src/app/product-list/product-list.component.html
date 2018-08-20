@@ -1,9 +1,12 @@
-<app-product [product]="selectedProduct"></app-product>
+<div class="app-product-list">
+  <div id="app-product">
+    <app-product [product]="selectedProduct"></app-product>
+  </div>
 
-
-<div class="list-product">
-  <mat-selection-list>
-    <mat-list-item *ngFor="let product of products" (click)="displayDetails(product)"> {{product.name}} 
-    </mat-list-item>
-  </mat-selection-list>
+  <div id="list-product">
+    <mat-selection-list>
+      <mat-list-item *ngFor="let product of products" (click)="displayDetails(product)"> {{product.name}} 
+      </mat-list-item>
+    </mat-selection-list>
+  </div>
 </div>
